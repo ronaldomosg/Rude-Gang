@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - RUDE GANG</title>
+    <script>
+        function registrarUsuario(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const correo = document.getElementById('correo').value;
+            const contrasena = document.getElementById('contrasena').value;
+
+            if (nombre && apellido && correo && contrasena) {
+                alert("Registro Exitoso");
+                // Puedes redirigir al login si quieres:
+                // window.location.href = "login.html";
+            } else {
+                alert("Por favor completa todos los campos.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Registro</h2>
+    <form onsubmit="registrarUsuario(event)">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" required><br><br>
+
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" required><br><br>
+
+        <label for="correo">Correo electrónico:</label><br>
+        <input type="email" id="correo" required><br><br>
+
+        <label for="contrasena">Contraseña:</label><br>
+        <input type="password" id="contrasena" required><br><br>
+
+        <button type="submit">Registrarse</button>
+    </form>
+</body>
+</html>
